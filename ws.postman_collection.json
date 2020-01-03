@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "2f057046-52b8-4ab3-a1af-82579c90da6f",
+		"name": "ws",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "166b0933-87cf-47dd-9542-c5243823754b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2fba8357-9416-4e68-8d28-ffa5e6387ecc",
+						"exec": [
+							"var err_code=(data.err_code);",
+							"var err_message=(data.err_message)",
+							"",
+							"pm.environment.set(\"err_code\", err_code);",
+							"pm.environment.set(\"err_message\", err_message);",
+							"",
+							"",
+							"pm.test(\" err_code equal\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.err_code).to.eql(err_code);",
+							"});",
+							"pm.test(\"err_message equal\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.err_message).to.eql(err_message);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:5000/entryTask?a={{event_a}}&b={{event_b}}",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"entryTask"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "{{event_a}}"
+						},
+						{
+							"key": "b",
+							"value": "{{event_b}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

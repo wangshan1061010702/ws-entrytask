@@ -1,0 +1,11 @@
+event_a,event_b,err_code,err_message
+ws,ws,21,empty or wrong params
+1.1,ws,21,empty or wrong params
+1,1,21,empty or wrong params
+1,1.1,21,empty or wrong params
+ws,1,21,empty or wrong params
+1,ws,0,success
+-1,ws,0,success
+,ws,21,empty or wrong params
+1,,21,empty or wrong params
+,,21,empty or wrong params
