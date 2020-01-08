@@ -1,0 +1,17 @@
+event_a,event_b,err_code,err_message
+ws,ws,21,empty or wrong params
+1.1,ws,21,empty or wrong params
+,ws,21,empty or wrong params
+1,,21,empty or wrong params
+,,21,empty or wrong params
+1,ws,0,success
+-1,ws,0,success
+0,ws,0,success
+12345678909876654,ws,0,success
+1,@#$,0,success
+1,w  d,0,success
+1,             ,21,empty or wrong params
+1,中国,0,success
+1,1111,0,success
+1,-1111,0,success
+1,1.111,0,success
